@@ -1,3 +1,5 @@
-# Non-Skidded-Selfbot
+Clumsy and Leimag
 
-me n' my friend Clumsy are gonna try to make a non skidded selfbot woohoo
+Non-Skidded-Selfbot
+-------------------
+Leimag and I are going to try and make a selfbot NOT skidding any other selfbots (maybe) we will credit the people we do "skid" from
