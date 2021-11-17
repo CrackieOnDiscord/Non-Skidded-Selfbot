@@ -24,7 +24,7 @@ with open("./Data/config.json") as f:
     
 token = config.get('token')
 prefix = config.get('prefix')
-rpc = config.get('RPC')
+rpc = config.get('RPC') #Broken until Leimag realizes this is going to be impossible
 
 nssb = discord.Client()
 nssb = commands.Bot(command_prefix=prefix, self_bot = True)
@@ -115,13 +115,9 @@ def LoadedPrint():
                                                   {colorama.Fore.LIGHTBLUE_EX}Type {colorama.Fore.LIGHTBLUE_EX}{prefix}help{colorama.Fore.LIGHTBLUE_EX} to see commands
              {colorama.Fore.LIGHTBLUE_EX}─────────────────────────────────────────────{colorama.Fore.WHITE}─────────────────────────────────────────────
     ''' + Fore.WHITE)
-    ctypes.windll.kernel32.SetConsoleTitleW(f'NSSB | Version 1.1 DEV |')
+    ctypes.windll.kernel32.SetConsoleTitleW(f'NSSB | Version 1.2 DEV |')
           
 #GUI Ends
-          
-          
-          
-
 
 #Help Command Starts
 
@@ -136,7 +132,11 @@ async def help(ctx):
     em.set_footer(text='Made by Clumsy && Leimag')
     em.color = discord.Colour.random()
     em.add_field(name = f'{prefix}help', value = 'This command...', inline=False)
+<<<<<<< HEAD
     em.add_field(name = f'{prefix}massdm', value = 'Mass DM\'s friends in your friendslist.', inline=False)
+=======
+    em.add_field(name = f'{prefix}massdm', value = 'Mass DM\'s friends in your friendslist, can mass dm an ID if provided.', inline=False)
+>>>>>>> ca8ccad16b5f86caa9f3362d9ae488231580a3fd
     em.add_field(name = f'{prefix}leaveservers', value = 'Leaves servers for you.', inline=False)
     em.add_field(name = f'{prefix}randomnumber', value = 'Generates a random integer.', inline=False)
     await ctx.send(embed = em)
@@ -212,6 +212,7 @@ async def leaveservers(ctx):
     print(f"{Fore.GREEN}[+] {Fore.WHITE}Left {serversleft} Servers")
                 
             
+<<<<<<< HEAD
 
 @nssb.command()
 async def massping(ctx, int: int = 5):
@@ -247,17 +248,20 @@ async def massping(ctx, int: int = 5):
                 await msg.delete()
             except:
                 print(f'{Fore.RED}[-]{Fore.WHITE} Failed to delete ping message.')
+=======
+@nssb.command()
+async def randomnumber(ctx):
+    await ctx.message.delete()
+    em = discord.Embed()
+    RanNumber = {random.randrange(10000000)}
+    em.title = 'Random Number Generated'
+    em.description = f'Here is your randomly number: {RanNumber}'
+    await ctx.send(embed = em)
+
+>>>>>>> ca8ccad16b5f86caa9f3362d9ae488231580a3fd
 
 #Misc Command Ends
 
-#  _   _  _____  _____  _____  _____  ____    ____ 
-# | \ | ||_   _|| ____|| ____||  ___||  _ \  / ___|
-# |  \| |  | |  ||  __ ||  __ | |___ | |_| || |__  
-# | |\  |  | |  || |_ ||| |_ ||  ___||    /  \__ \ 
-# | | | |  | |  ||   ||||   ||| |    | |\ \     | |
-# | | | | _| |_ ||___||||___||| |___ | | | | ___| |
-# |_| |_||_____||_____||_____||_____||_| |_||____/
- 
 #About Command Starts
 
 @nssb.command()

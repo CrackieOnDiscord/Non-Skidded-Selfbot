@@ -1,0 +1,2 @@
+Place your token and prefix in /data/config.json
+if you don't know how to get your token just do a simple google search
